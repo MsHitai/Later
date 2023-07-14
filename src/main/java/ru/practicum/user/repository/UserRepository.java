@@ -1,10 +1,12 @@
 package ru.practicum.user.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import ru.practicum.user.model.User;
 
 import java.util.List;
 
-public interface UserRepository {
-    List<User> findAll();
-    User save(User user);
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    List<User> findByEmailContainingIgnoreCase(String emailSearch);
 }
