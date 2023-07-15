@@ -2,6 +2,7 @@ package ru.practicum.item.model;
 
 import lombok.Builder;
 import lombok.Data;
+import ru.practicum.note.model.ItemNote;
 import ru.practicum.user.model.User;
 
 import javax.persistence.*;
@@ -16,11 +17,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinTable(
-            name = "user_item",
-            joinColumns = @JoinColumn(name = "item_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "url", nullable = false)
@@ -30,4 +28,7 @@ public class Item {
     @CollectionTable(name = "tags", joinColumns = @JoinColumn(name = "item_id"))
     @Column(name = "name")
     private Set<String> tags;
+
+    @OneToMany
+    private Set<ItemNote> notes;
 }

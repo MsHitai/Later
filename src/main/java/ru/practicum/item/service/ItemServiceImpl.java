@@ -33,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Transactional
     @Override
-    public void deleteItem(long userId, long itemId) { // todo change the method
-        //itemRepository.deleteByUserIdAndItemId(userId, itemId);
+    public void deleteItem(long userId, long itemId) {
+        repository.deleteByUserIdAndId(userId, itemId);
     }
 }

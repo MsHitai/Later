@@ -12,6 +12,5 @@ public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredi
 
     List<Item> findByUserId(long userId);
 
-    /*@Query("DELETE FROM items i USING user_item ui WHERE i.id = ui.item_id and user_id = ?1 and item_id = ?2")
-    void deleteByUserIdAndItemId(long userId, long itemId);*/
+    void deleteByUserIdAndId(long userId, long itemId);
 }
