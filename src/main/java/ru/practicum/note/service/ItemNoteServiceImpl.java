@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class ItemNoteServiceImpl implements ItemNoteService{
+public class ItemNoteServiceImpl implements ItemNoteService {
 
     private final ItemNoteRepository itemNoteRepository;
 

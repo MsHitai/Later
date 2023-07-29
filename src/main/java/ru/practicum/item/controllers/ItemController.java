@@ -22,7 +22,7 @@ public class ItemController {
 
     @PostMapping
     public ItemDto add(@RequestHeader("X-Later-User-Id") Long userId,
-                    @RequestBody Item item) {
+                       @RequestBody Item item) {
         return itemService.addNewItem(userId, item);
     }
 

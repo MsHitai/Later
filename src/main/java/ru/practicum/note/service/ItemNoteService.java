@@ -6,8 +6,7 @@ import ru.practicum.note.dto.ItemNoteDto;
 import java.util.List;
 
 @Transactional(readOnly = true)
-public
-interface ItemNoteService {
+public interface ItemNoteService {
 
     @Transactional
     ItemNoteDto addNewItemNote(long userId, ItemNoteDto itemNoteDto);
