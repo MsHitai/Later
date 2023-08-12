@@ -31,4 +31,14 @@ public class ItemController {
                            @PathVariable long itemId) {
         itemService.deleteItem(userId, itemId);
     }
+
+    /*@GetMapping
+    public List<ItemDto> get(@RequestHeader("X-Later-User-Id") long userId,
+                             @RequestParam(defaultValue = "unread") String state,
+                             @RequestParam(defaultValue = "all") String contentType,
+                             @RequestParam(defaultValue = "newest") String sort,
+                             @RequestParam(defaultValue = "10") int limit,
+                             @RequestParam(required = false) List<String> tags) {
+        return itemService.getItems(GetItemRequest.of(userId, state, contentType, sort, limit, tags));
+    }*/
 }
